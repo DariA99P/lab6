@@ -1,0 +1,124 @@
+{
+	"books": [
+		{
+			"id": 1,
+			"name": "Эмоциональная гибкость Глава 1",
+			"yearOfPublishing": "2017",
+			"numberOfPages": 200,
+			"description": "В этой книге вы найдете описание приемов и средств, которые позволят вам найти подход к своим самым трудным переживаниям, понять, какие пораженческие мысли и линии поведения вас ограничивают, научиться подстраиваться под сложный и быстро меняющийся мир и не давать негативным чувствам выбивать себя из колеи.",
+			"language": "Русский",
+			"reader": "Инна Пинчук",
+			"inStock": false,
+			"returnDate": "2020-04-08",
+			"author": "Сьюзан Дэвид"
+		},
+		{
+			"id": 2,
+			"name": "Гибкое сознание",
+			"yearOfPublishing": "2019",
+			"numberOfPages": 300,
+			"description": "Книга, изменяющая жизнь миллионов людей",
+			"language": "Русский",
+			"reader": null,
+			"inStock": true,
+			"returnDate": null,
+			"author": "Кэрол Дуэк"
+		},
+		{
+			"id": 3,
+			"name": "Решение проблем по методикам спецслужб",
+			"yearOfPublishing": "2014",
+			"numberOfPages": 430,
+			"description": "",
+			"language": "Русский",
+			"reader": null,
+			"inStock": true,
+			"returnDate": null,
+			"author": "Морган Джонс"
+		},
+		{
+			"id": 4,
+			"name": "Джедайские техники",
+			"yearOfPublishing": "2014",
+			"numberOfPages": 150,
+			"description": "",
+			"language": "Русский",
+			"reader": "Максим Колинс",
+			"inStock": false,
+			"returnDate": "2020-05-01",
+			"author": "Максим Дорофеев"
+		},
+		{
+			"id": 5,
+			"name": "Восходящая спираль",
+			"yearOfPublishing": "2018",
+			"numberOfPages": 250,
+			"description": "",
+			"language": "Русский",
+			"reader": "Максим Колинс",
+			"inStock": false,
+			"returnDate": "2020-05-01",
+			"author": "Алекс Корб"
+		},
+		{
+			"id": 6,
+			"name": "Сейчас",
+			"yearOfPublishing": "2018",
+			"numberOfPages": 250,
+			"description": "",
+			"language": "Русский",
+			"reader": "Алена Ройн",
+			"inStock": false,
+			"returnDate": "2020-04-21",
+			"author": "Эрик Бертран Ларссен"
+		},
+		{
+			"id": 7,
+			"name": "100 способов изменить жизнь",
+			"yearOfPublishing": "2018",
+			"numberOfPages": 300,
+			"description": "",
+			"language": "Русский",
+			"reader": null,
+			"inStock": true,
+			"returnDate": null,
+			"author": "Лариса Парфентьева"
+		},
+		{
+			"id": 8,
+			"name": "Магия утра",
+			"yearOfPublishing": "2013",
+			"numberOfPages": 120,
+			"description": "Как первый час дня определяет ваш успех",
+			"language": "Русский",
+			"reader": null,
+			"inStock": true,
+			"returnDate": null,
+			"author": "Хэл Элрод"
+		},
+		{
+			"id": 9,
+			"name": "На пределе",
+			"yearOfPublishing": "2015",
+			"numberOfPages": 120,
+			"description": "Неделя без жалоcти к себе",
+			"language": "Русский",
+			"reader": "Александр Кук",
+			"inStock": false,
+			"returnDate": "2020-04-15",
+			"author": "Эрик Бертран Ларссен"
+		},
+		{
+			"id": 10,
+			"name": "Отказываюсь выбирать",
+			"yearOfPublishing": "2011",
+			"numberOfPages": 400,
+			"description": "Как использовать свои интересы, увлечения и хобби, чтобы построить жизнь и карьеру своей мечты",
+			"language": "Русский",
+			"reader": null,
+			"inStock": true,
+			"returnDate": null,
+			"author": "Барбара Шер"
+		}
+	]
+}
