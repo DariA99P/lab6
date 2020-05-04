@@ -53,7 +53,7 @@
 		{
 			"id": 3,
 			"name": "Дарья Попроцкая",
-			"balance": 530010000,
+			"balance": 530027000,
 			"stocks": [
 				{
 					"idStock": 1,
@@ -61,7 +61,7 @@
 				},
 				{
 					"idStock": 3,
-					"number": 7000000
+					"number": 6999000
 				}
 			],
 			"tradingStocks": [
