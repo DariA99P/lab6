@@ -8,7 +8,7 @@ export const WrapperComponentStyled = styled.div`
   align-items: center;
   height: 930px;
 `;
-export const BookWrapperComponentStyled = styled.div`
+export const BrokersWrapperComponentStyled = styled.div`
   padding: 24px;
   display: flex;
   justify-content: space-between;
@@ -30,7 +30,6 @@ export const ControlPanelStyled = styled.div`
 
 export const TitleStyled = styled.div`
   font-size: 36px;
-  margin-bottom: 24px;
 `;
 export const DescriptionsStyled = styled(Descriptions)`
   tbody {
@@ -48,7 +47,7 @@ export const ButtonBlockStyled = styled.div`
 `;
 
 export const ButtonStyled = styled(Button)`
-  width: 100px;
+  width: 200px;
 `;
 
 export const InputItemStyled = styled(Input)`
@@ -74,4 +73,45 @@ export const ModalBodyLabelStyled = styled.div`
 export const ActionsBlockButton = styled.div`
   display: flex;
   align-items: center;
+`;
+
+export const LoginComponentStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  justify-content: center;
+`;
+
+export const FormBlockStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+`;
+
+export const LineBlockStyled = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+`;
+
+export const TextStyled = styled.div`
+  width: 150px;
+`;
+
+export const TitleBlockStyled = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+`;
+
+export const ErrorMessageStyled = styled.div`
+  font-size: 14px;
+  color: red;
+`;
+
+export const DescriptionsBlockStyled = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;

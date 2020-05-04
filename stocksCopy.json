@@ -1,0 +1,28 @@
+{
+  "stocks": [
+    {
+     "id": 1,
+      "typeStock": "Мотор Січ",
+      "numberShares": 2000000,
+      "costPerShare": 12
+    },
+    {
+      "id": 2,
+      "typeStock": "Райффайзен Банк Аваль",
+      "numberShares": 500000000,
+      "costPerShare": 20
+    },
+    {
+      "id": 3,
+      "typeStock": "Укрнафта",
+      "numberShares": 50000000,
+      "costPerShare": 17
+    },
+    {
+      "id": 4,
+      "typeStock": "Миронівський Хлібопродукт",
+      "numberShares": 200000000,
+      "costPerShare": 19
+    }
+  ]
+}

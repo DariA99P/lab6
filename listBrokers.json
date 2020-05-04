@@ -1,0 +1,82 @@
+{
+	"brokers": [
+		{
+			"id": 1,
+			"name": "Иван Конев",
+			"balance": 100000000,
+			"stocks": [
+				{
+					"idStock": 1,
+					"number": 30000
+				},
+				{
+					"idStock": 4,
+					"number": 150000
+				}
+			],
+			"tradingStocks": [
+				{
+					"idStock": 1,
+					"number": 10000
+				}
+			]
+		},
+		{
+			"id": 2,
+			"name": "Елизавета Минина",
+			"balance": 200000000,
+			"stocks": [
+				{
+					"idStock": 2,
+					"number": 1000000
+				},
+				{
+					"idStock": 3,
+					"number": 700000
+				},
+				{
+					"idStock": 4,
+					"number": 100000
+				}
+			],
+			"tradingStocks": [
+				{
+					"idStock": 3,
+					"number": 230000
+				},
+				{
+					"idStock": 4,
+					"number": 40000
+				}
+			]
+		},
+		{
+			"id": 3,
+			"name": "Дарья Попроцкая",
+			"balance": 530010000,
+			"stocks": [
+				{
+					"idStock": 1,
+					"number": 700000
+				},
+				{
+					"idStock": 3,
+					"number": 7000000
+				}
+			],
+			"tradingStocks": [
+				{
+					"idStock": 1,
+					"number": 200000
+				}
+			]
+		},
+		{
+			"id": 4,
+			"name": "Тест",
+			"balance": 100000000,
+			"stocks": [],
+			"tradingStocks": []
+		}
+	]
+}

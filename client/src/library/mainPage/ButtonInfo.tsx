@@ -1,40 +1,50 @@
 import React from "react";
-import { Tooltip } from "antd";
-import {Link} from "react-router-dom";
-import {ListType} from "../types";
-import { InfoCircleFilled } from '@ant-design/icons'
-import {ActionsBlockButton} from "../styled";
-import {MinusCircleFilled} from "@ant-design/icons/lib";
-import {deleteBook, userClickedOnTheDetailsButton} from "../redux/actions";
-import {useDispatch} from "react-redux";
+import {Button, InputNumber, Modal} from "antd";
+import {ListType, StockType} from "../types";
+import {ErrorMessageStyled, ModalBodyLabelStyled} from "../styled";
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "../../redux";
+import {buyStocks} from "../redux/actions";
 
-export const ButtonInfo: React.FC<{ item: ListType }> = ({ item }) => {
+const buttonStyles: React.CSSProperties = { width: '100px' };
+const inputStyles: React.CSSProperties = { marginLeft: '16px', width: '200px' };
+export const ButtonInfo: React.FC<{ item: StockType }> = ({ item }) => {
     const dispatch= useDispatch();
-    const onClickRemoveButton = React.useCallback(
-        () => dispatch(deleteBook(item.id)),
-        [dispatch, item.id]
-    );
+    const [isVisible, setIsVisible] = React.useState(false);
+    const [numberStocks, setNumberStocks] = React.useState(0);
+    const currentBrokerInfo = useSelector<RootState, ListType | null>(state => state.library.currentBrokerInfo);
 
-    const onClickDetailButton = React.useCallback(
-        () => {
-            localStorage.setItem('bookId', String(item.id));
-            dispatch(userClickedOnTheDetailsButton(item.id));
-        },
-        [dispatch, item.id]
-    );
-    
+    const onClickBuy = React.useCallback(() => setIsVisible(true), []);
+    const onOk = React.useCallback(() => {
+        setIsVisible(false);
+        dispatch(buyStocks.started({ idStock: item.id, count: numberStocks }));
+    }, [dispatch, item.id, numberStocks]);
+    const onCancel = React.useCallback(() => setIsVisible(false), []);
+    const onChange = React.useCallback(value => setNumberStocks(value), []);
+
+    const sumStocks = numberStocks*item.costPerShare;
+    const isValid = currentBrokerInfo && sumStocks > currentBrokerInfo?.balance;
+
     return (
-        <ActionsBlockButton>
-            <Link to={{ pathname: `/book/${item.id}`}}>
-                <Tooltip title="Detailed information">
-                    <InfoCircleFilled onClick={onClickDetailButton} />
-                </Tooltip>
-            </Link>
-            <Link to={{ pathname: `/` }}>
-                <Tooltip title="Delete book">
-                    <MinusCircleFilled style={{ marginLeft: '16px' }} onClick={onClickRemoveButton} />
-                </Tooltip>
-            </Link>
-        </ActionsBlockButton>
+        <>
+            <Button style={buttonStyles} type="primary" onClick={onClickBuy}>Купить</Button>
+            <Modal
+                title='Покупка акций'
+                visible={isVisible}
+                onOk={onOk}
+                onCancel={onCancel}
+            >
+                <ModalBodyLabelStyled>
+                    <div>Количество акций: </div>
+                    <InputNumber style={inputStyles} min={1} max={+item.numberShares} onChange={onChange}/>
+                </ModalBodyLabelStyled>
+                <ModalBodyLabelStyled>
+                    <div>{`Суммарная стоимость: ${sumStocks}`}</div>
+                </ModalBodyLabelStyled>
+                <ModalBodyLabelStyled>
+                    {isValid && (<ErrorMessageStyled>У Вас недостаточно средств</ErrorMessageStyled>)}
+                </ModalBodyLabelStyled>
+            </Modal>
+        </>
     )
 };

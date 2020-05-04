@@ -1,12 +1,21 @@
 export interface ListType {
     id: number;
     name: string;
-    yearOfPublishing: string;
-    numberOfPages: number;
-    description: string;
-    language: string;
-    reader: string | null;
-    inStock: boolean;
-    returnDate: string | null;
-    author: string;
+    balance: number;
+    stocks: Array<{
+        name: string;
+        number: number;
+        allSum: number;
+    }>;
+    tradingStocks: Array<{
+        name: string;
+        number: number;
+    }>;
+}
+
+export interface StockType {
+    id: number;
+    typeStock: string;
+    numberShares: number;
+    costPerShare: number;
 }

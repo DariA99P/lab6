@@ -1,36 +1,76 @@
-import {ListType} from "../types";
+import {ListType, StockType} from "../types";
 import React from "react";
 import {ButtonInfo} from "./ButtonInfo";
 
 export const columns = [
     {
-        title: 'Title of the book',
+        title: 'Брокер',
         dataIndex: 'item',
         key: 'name',
         render: (_record: any, item: ListType) => <div key={item.id}>{item.name}</div>,
     },
     {
-        title: 'Author',
+        title: 'Доступный баланс',
         dataIndex: 'item',
-        key: 'author',
-        render: (_record: any, item: ListType) => <div key={item.id}>{item.author}</div>,
+        key: 'balance',
+        render: (_record: any, item: ListType) => <div key={item.id}>{item.balance} грн</div>,
     },
     {
-        title: 'The year of publishing',
+        title: 'Выкупленные акции',
         dataIndex: 'item',
-        key: 'yearPub',
-        render: (_record: any, item: ListType) => <div key={item.id}>{item.yearOfPublishing}</div>,
+        key: 'infoStocks',
+        render: (_record: any, item: ListType) => (
+            <div key={item.id}>
+                {item.stocks.map((i, index) => (
+                    <div key={index}>
+                        <div>{`Тип акции: ${i.name};`}</div>
+                        <div>{`Количество купленных акций: ${i.number}.`}</div>
+                        <div>{`Общая сумма: ${i.allSum} грн;`}</div>
+                    </div>
+                ))}
+            </div>
+        ),
     },
     {
-        title: 'Language',
+        title: 'Акции выставленные на торги',
         dataIndex: 'item',
-        key: 'language',
-        render: (_record: any, item: ListType) => <div key={item.id}>{item.language}</div>,
-    },
-    {
-        title: 'Action',
-        dataIndex: 'item',
-        key: 'action',
-        render: (_record: any, item: ListType) => <ButtonInfo item={item} />,
+        key: 'tradingStocks',
+        render: (_record: any, item: ListType) => (
+            <div key={item.id}>
+                {item.tradingStocks.map((i, index) => (
+                    <div key={index}>
+                        <div>{`Тип акции: ${i.name};`}</div>
+                        <div>{`Количество акций: ${i.number}.`}</div>
+                    </div>
+                ))}
+            </div>
+        ),
     },
 ];
+
+export const columnsStocks = [
+    {
+        title: 'Название акции',
+        dataIndex: 'item',
+        key: 'name',
+        render: (_record: any, item: StockType) => <div key={item.id}>{item.typeStock}</div>,
+    },
+    {
+        title: 'Количество доступных акций',
+        dataIndex: 'item',
+        key: 'count',
+        render: (_record: any, item: StockType) => <div key={item.id}>{item.numberShares}</div>,
+    },
+    {
+        title: 'Стоимость',
+        dataIndex: 'item',
+        key: 'count',
+        render: (_record: any, item: StockType) => <div key={item.id}>{item.costPerShare} грн/шт</div>,
+    },
+    {
+        title: '',
+        dataIndex: 'item',
+        key: 'action',
+        render: (_record: any, item: StockType) => <ButtonInfo item={item} />,
+    },
+]

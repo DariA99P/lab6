@@ -1,4 +1,4 @@
 import {RootState} from "../../redux";
 
-export const getCurrentBookInfo = (state: RootState) => state.library.currentBookInfo;
-export const getCurrentBookId = (state: RootState) => state.library.currentBookId;
+export const getCurrentBrokerInfo = (state: RootState) => state.library.currentBrokerInfo;
+export const getStocks = (state: RootState) => state.library.stocks;

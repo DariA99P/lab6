@@ -3,8 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import store from "./redux/store";
+import {Provider} from "react-redux";
+import history from "./config/history";
+import { Router } from 'react-router-dom';
+import enUs from 'antd/lib/locale-provider/en_US';
+import LocaleProvider from "antd/lib/locale-provider";
 
-ReactDOM.render(React.createElement(App), document.getElementById('root'));
+ReactDOM.render(
+    <Provider store={store}>
+        <LocaleProvider locale={enUs}>
+            <Router history={history}>
+                <App/>
+            </Router>
+        </LocaleProvider>
+    </Provider>,
+    document.getElementById('root'));
 
 
 // If you want your app to work offline and load faster, you can change
